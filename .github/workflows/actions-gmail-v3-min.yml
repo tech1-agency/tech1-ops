@@ -13,7 +13,7 @@ on:
         description: 'action-send-mail@v3 usage: {{ with.subject }}'
 
 jobs:
-  main:
+  send:
     runs-on: ubuntu-latest
     steps:
       - name: Gmail Send V3
