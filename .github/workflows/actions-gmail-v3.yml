@@ -24,7 +24,7 @@ on:
           <b>Message</b>: ${{ github.event.commits[0].message }}
 
 jobs:
-  send:
+  main:
     runs-on: ubuntu-latest
     steps:
       - name: Gmail Send V3
