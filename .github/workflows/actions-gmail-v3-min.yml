@@ -4,7 +4,7 @@ on:
   workflow_call:
     inputs:
       to:
-        required: to
+        required: true
         type: string
         description: 'action-send-mail@v3 usage: {{ with.to }}'
       previous_job_status:
