@@ -1,4 +1,4 @@
-name: gmail-v3-min
+name: actions-gmail-v3
 
 on:
   workflow_call:
@@ -11,12 +11,23 @@ on:
         required: false
         type: string
         description: 'action-send-mail@v3 usage: {{ with.subject }}'
+      html_body:
+        type: string
+        required: false
+        description: 'action-send-mail@v3 usage: {{ with.html_body }}'
+        default: |
+          <b>CommitterId</b>: ${{ github.actor }}<br>
+          <b>Trigger</b>: ${{ github.triggering_actor }}<br>
+          <b>Actions</b>: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}<br>
+          <b>Changes</b>: https://github.com/${{ github.repository }}/commit/${{ github.sha }}<br>
+          <b>Committer</b>: ${{ github.event.commits[0].committer.name }}<br>
+          <b>Message</b>: ${{ github.event.commits[0].message }}
 
 jobs:
-  main:
+  send:
     runs-on: ubuntu-latest
     steps:
-      - name: Mails
+      - name: Gmail Send V3
         if: always()
         uses: dawidd6/action-send-mail@v3
         with:
@@ -27,6 +38,4 @@ jobs:
           subject: '${{ inputs.previous_job_status || job.status }}: ${{ github.repository }} » ${{ github.ref_name }}, ${{ github.workflow }} # ${{ github.run_number }}'
           to: ${{ inputs.to }}
           from: ${{ vars.SMTP_GMAIL_FROM }}
-          html_body: |
-            <b>Trigger</b>: ${{ github.triggering_actor }}<br>
-            <b>Actions</b>: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          html_body: ${{ inputs.html_body }}
