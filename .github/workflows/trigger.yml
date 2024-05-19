@@ -1,0 +1,18 @@
+name: trigger
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  mails:
+    uses: tech1-io/tech1-ops/.github/workflows/gmail-v3-min.yml@main
+    secrets: inherit
+    with:
+      to: ${{ vars.EMAILS_TESTS }}
