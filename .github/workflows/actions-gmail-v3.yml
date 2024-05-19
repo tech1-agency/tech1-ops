@@ -16,7 +16,7 @@ on:
         required: false
         description: 'action-send-mail@v3 usage: {{ with.html_body }}'
         default: |
-          <b>CommitterId</b>: ${{ github.actor }}<br>
+          <b>Actor</b>: ${{ github.actor }}<br>
           <b>Trigger</b>: ${{ github.triggering_actor }}<br>
           <b>Actions</b>: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}<br>
           <b>Changes</b>: https://github.com/${{ github.repository }}/commit/${{ github.sha }}<br>
