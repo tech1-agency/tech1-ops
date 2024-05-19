@@ -12,7 +12,7 @@ concurrency:
 
 jobs:
   mails:
-    uses: tech1-io/tech1-ops/.github/actions/actions-gmail-v3-min.yml@send
+    uses: tech1-io/tech1-ops/.github/workflows/actions-gmail-v3-min.yml@send
     secrets: inherit
     with:
       to: ${{ vars.EMAILS_TESTS }}
