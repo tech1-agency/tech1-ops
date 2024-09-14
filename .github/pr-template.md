@@ -1,12 +1,13 @@
 ### What
 - Describe what changes were made in this pull request
 - Be specific about the functionality that has been added or modified
+- Max 5 sentences
 
 ### Why
 - Explain why these changes were necessary
 - Include any context or background that helps in understanding the changes
 
 ### Checklist
-- [ ] I have tested the changes locally
-- [ ] I have run the code against the linter and fixed any issues
-- [ ] I have used proper English within the pull request to be able to read it nicely
+- [ ] I tested the changes locally
+- [ ] I run the code against SonarQube locally
+- [ ] I have used proper English within the pull request so the reviewer can read and understand it easily
