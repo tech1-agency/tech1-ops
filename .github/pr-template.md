@@ -1,5 +1,5 @@
-### Short
-- Please describe what had been done in a few sentences
+### Resume
+- ...
 
 ### What
 - Describe what changes were made in this pull request
