@@ -1,7 +1,6 @@
 ### What
 - Describe what changes were made in this pull request
 - Be specific about the functionality that has been added or modified
-- Max 5 sentences
 
 ### Why
 - Explain why these changes were necessary
