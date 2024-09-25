@@ -28,5 +28,5 @@ jobs:
           to: ${{ inputs.to }}
           from: ${{ vars.SMTP_GMAIL_FROM }}
           html_body: |
-            <b>Trigger</b>: ${{ github.triggering_actor }}<br>
             <b>Actions</b>: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            <b>Message</b>: ${{ github.event.commits[0].message }}
