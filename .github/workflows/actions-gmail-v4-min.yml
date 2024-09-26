@@ -1,4 +1,4 @@
-name: actions-gmail-v3-ops
+name: actions-gmail-v4-min
 
 on:
   workflow_call:
@@ -16,7 +16,7 @@ jobs:
   send:
     runs-on: ubuntu-latest
     steps:
-      - name: Gmail Send V3
+      - name: Gmail Send V4
         if: always()
         uses: dawidd6/action-send-mail@v3
         with:
