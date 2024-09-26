@@ -12,7 +12,7 @@ concurrency:
 
 jobs:
   mails:
-    uses: tech1-io/tech1-ops/.github/workflows/actions-gmail-v4.yml@main
+    uses: tech1-agency/tech1-ops/.github/workflows/actions-gmail-v4.yml@main
     secrets: inherit
     with:
       to: ${{ vars.EMAILS_ADMINS }}
